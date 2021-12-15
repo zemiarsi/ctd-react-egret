@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
-// import './index.css'
-import style from './AddTodoForm.module.css'
-import PropTypes from 'prop-types'
+import style from "./AddTodoForm.module.css";
+import PropTypes from "prop-types";
 
 function InputWithLabel({ children, handleTitleChange, todoTitle }) {
   const inputRef = useRef();
@@ -12,8 +11,11 @@ function InputWithLabel({ children, handleTitleChange, todoTitle }) {
   });
   return (
     <>
-      <label className={style.formLabel} htmlFor="todoTitle">{children} </label>
-      <input className={style.inputfield}
+      <label className={style.formLabel} htmlFor="todoTitle">
+        {children}{" "}
+      </label>
+      <input
+        className={style.inputfield}
         ref={inputRef}
         onChange={handleTitleChange}
         value={todoTitle}
@@ -26,6 +28,6 @@ function InputWithLabel({ children, handleTitleChange, todoTitle }) {
 InputWithLabel.prototype = {
   children: PropTypes.string,
   handleTitleChange: PropTypes.func,
-  todoTitle: PropTypes.string
-}
+  todoTitle: PropTypes.string,
+};
 export default InputWithLabel;
